@@ -1,0 +1,58 @@
+100 Days of react, redux and typescript mastery
+
+React Notes 
+
+DAY 1: Introduction to react
+What is React?
+React is a javascript library developed by facebook for building  User Interfaces for web application.
+The React applications are made up of components which are a peice of the user interface eg a button, section , form or even an entire page.
+
+
+Why React?
+The react library is very effective for building web applications with reusabled components and also makes it easier to effect updates and modifications to the application without having to refactor its entire code base because components can be created and added independently.
+
+Components
+Components are essentially javascript functions that return mark up and each component can be nested within another component.
+
+State: 
+
+JSX rules
+1. All tags like <br/> have to be closed
+2.Components also can’t return multiple JSX tags. All elements in a component must be wrapped in a single <div>...</div> or empty <></> wrapper.
+3. The css class of an element is specified with the className attribute not class like in HTML.
+4.Curly braces can be used within the mark up to embed Javascript code within both element content and attribute values
+
+
+
+
+
+
+
+
+
+DAY 2: Events
+What are Events?
+
+
+
+Handling Events:
+Events can be handled by defining event handling functions within a component and then passing down the function name to the affected element's event handler property 
+
+
+
+
+DAY 3: Hooks
+
+What are Hooks?
+
+Hooks are functions that let you “hook into” React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes.
+
+React provides a few built-in Hooks like useState, useEffect and useRef but you can also create your own Hooks to reuse stateful behavior between different components.
+
+
+Why use Hooks?
+
+Rules for using Hooks:
+
+1. Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
+2. Only call Hooks from React function components. Don’t call Hooks from regular JavaScript functions.

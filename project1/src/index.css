@@ -1,0 +1,33 @@
+.app{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   
+}
+h1{
+   font-size: 20px;
+   color: grey;
+}
+
+.cards{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.profileCard{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   border: 1px solid gray;
+   margin: 10px;
+   padding: 5px;
+   
+}
+
+.image{
+   width: 200px;
+   height: 200px;
+   border-radius: 10px;
+}

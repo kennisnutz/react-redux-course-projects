@@ -14,9 +14,24 @@ The react library is very effective for building web applications with reusabled
 Components
 Components are essentially javascript functions that return mark up and each component can be nested within another component.
 
-State: 
+Properties:
+A property is an attribute that is passed down to a component
 
-JSX rules
+Events:
+Events are actions that occur during the process of using an application for e.g. button is clicked and page is scrolled
+using events:
+1. decide what kind of event to listen for
+2. create a function known as an event handler or callback
+3. Name the function using the pattern handle+EventName or on+EventType
+4. pass the function as a property to the affected element eg a button or an input field
+5. make sure to pass the function using the event name eg onClick, onMouseOver etc
+6. make sure to pass a reference to the function and do not call it
+
+
+State: 
+we make use of state when there is a peice of content that changes in the application frontend usually due to an event or as user interacts with the application. When the data changes React will update the content on the screen automatically. React contains a state library for managing state. Typically you would use the useState function to define a new state variable and its setter function. Calling the setter function causes react to rerender the function with the new values of the state variable.
+
+Some JSX rules
 1. All tags like <br/> have to be closed
 2.Components also can’t return multiple JSX tags. All elements in a component must be wrapped in a single <div>...</div> or empty <></> wrapper.
 3. The css class of an element is specified with the className attribute not class like in HTML.
@@ -29,19 +44,7 @@ JSX rules
 
 
 
-
-DAY 2: Events
-What are Events?
-
-
-
-Handling Events:
-Events can be handled by defining event handling functions within a component and then passing down the function name to the affected element's event handler property 
-
-
-
-
-DAY 3: Hooks
+DAY 2: Hooks
 
 What are Hooks?
 
@@ -52,7 +55,56 @@ React provides a few built-in Hooks like useState, useEffect and useRef but you 
 
 Why use Hooks?
 
+
+
 Rules for using Hooks:
 
 1. Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
 2. Only call Hooks from React function components. Don’t call Hooks from regular JavaScript functions.
+
+
+
+HTTP requests:
+Requests are a kind of text message with specific format used to access data from a server. Each request is accompanied by a response from the server. Requests are sent as objects rather than strings
+
+A request usually consists of
+1. A request line:
+contains the url to which the request is being made. The request line includes a method which indicates the general goal of the request
+The four common request methods are:
+GET: means we are trying to get some information from the server
+POST: means we are telling the server to create some new record
+PUT: means we are updating an existing record completely
+PATCH: means we are partially updating an existing record
+DEL:  means we are removing an existing record
+
+
+
+2. Headers
+provides additional information to the server that is recieving the request. This information could include
+the authorization which lets the server know who is making the request, the type of content requested
+3. Body -optional
+
+A response consists of:
+1. A status line:
+Include a status code that informs the requesting party of the satus of the request.
+The following are the most frequent status codes and there meanings:
+
+200: means the request was successful and the requested data is available
+201: means the record was successfully created
+204: means the record was successfully deleted
+
+301: means the URL requested has changed
+
+400: Something about the request syntax is incorrect
+401: the client is not authorized or should provide authorization
+403: means you are Forbiden from accessing this data
+404: means the requested data was not found
+
+500: something went wrong within the server. Server Error
+
+
+3. A body: contains the information returned 
+
+whenever a request is made, it takes an amount of time for the response to return and we have to account for that time because javascript 
+does not take account for this time at run time. This is handled by making the request asynchronously and using the await keyword.
+

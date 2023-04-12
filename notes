@@ -63,9 +63,6 @@ Rules for using Hooks:
 2. Only call Hooks from React function components. Don’t call Hooks from regular JavaScript functions.
 
 
-
-
-
 HTTP requests:
 Requests are a kind of text message with specific format used to access data from a server. Each request is accompanied by a response from the server. Requests are sent as objects rather than strings
 
@@ -109,4 +106,12 @@ The following are the most frequent status codes and there meanings:
 
 whenever a request is made, it takes an amount of time for the response to return and we have to account for that time because javascript 
 does not take account for this time at run time. This is handled by making the request asynchronously and using the await keyword.
+
+
+DAY 3
+
+Read about useEffect
+Play around with json-server
+list elements of iydl app
+draw application hierarchy diagram for iydl App
 

@@ -1,10 +1,6 @@
 {
   "books": [
     {
-      "title": "Harry potter",
-      "id": 1
-    },
-    {
       "title": "Data structures",
       "id": 2
     },
@@ -13,8 +9,8 @@
       "id": 3
     },
     {
-      "title": "another book",
-      "id": 4
+      "title": "new title test",
+      "id": 5
     }
   ]
 }

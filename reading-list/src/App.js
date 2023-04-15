@@ -1,19 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useContext } from 'react';
 import BookContext from './context/BookContext';
 
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
 
-import axios from 'axios';
-
 function App() {
-  const { books, getAllBooks, deleteBookById, editBookById, createBook } =
-    useContext(BookContext);
+  const { getAllBooks } = useContext(BookContext);
 
   useEffect(() => {
     getAllBooks();
-  }, []);
+  }, [getAllBooks]);
 
   return (
     <div className="app">

@@ -53,7 +53,13 @@ React provides a few built-in Hooks like useState, useEffect and useRef but you 
 
 
 Why use Hooks?
-Hooks provide a consice way to access reference data in an application// more info on hooks later
+Hooks provide a consice way to access reference data in an application
+Hooks add additional features to a component
+
+Commonly used hooks
+1. useState: allows components to use react state system
+2. useEffect: allows a component to run specified code at specified points in time 
+3. useContext: enables a component access values stored in the applications context
 
 
 
@@ -114,4 +120,158 @@ Read about useEffect
 Play around with json-server
 list elements of iydl app
 draw application hierarchy diagram for iydl App
+read about useContext
+
+
+Context feature
+Context is used as an alternative prop system to pass information between components even when they dont have direct links to each other
+It is not a replacement for props system
+it is not a replacement for communication channels like redux
+
+Steps to create context
+1 create context:
+a. create a file for the context object, usually named as TypeOfData+Context.js
+b import import { createContext } from "react"
+c initialize the context object : const TypeOfData+Context= createContext()
+
+2 specify data to be shared:
+a define provider function with values and functions to be shared with components. This function returns a context.provider component with all defined values
+b export provider function
+c export context object as default
+
+3 consume the data from any component
+a import provider function to parent file ie index file
+b embed app component in provider component
+c import useContext hook and created context object into appropriate component files 
+d destructure the required values by calling the useContext function with the context object as argument
+
+How to determine what data needs to be shared to all components through the context file 
+
+1 list all the state values and divide them into application state and component state
+Application state values are values that are used by many different components and component state is data that is used by very few components
+
+
+DAY 4
+Events and state desing Process
+
+1 list out what a user will do and the changes that they will see while using the application
+
+2 categorize each step as an event or an event handler. Each interaction from the user requires an event handler and every change in the state requires a state change
+
+3. Group common steps, remove duplicate steps and rewrite and generalize their description
+
+NAMING THE STATE AND SETTING THE TYPE
+Tips: try to use numbers, booleans or strings for the state values as objects and arrays are more complex to work with 
+
+4. Look at mockup. Remove or simplify parts of the component that dont change that are not changing.
+
+5. Replace remaining elements with text description.
+
+6. repeat 4 and 5  with a different variation
+
+7. Imagine that you have to return the text in steps 5 and 6. In addition to your component props, what other arguments would you need?
+
+8. Decide where each event handler + state will be defined. Check if other components need to know about that peice of state. if yes then the state should be defined in the app if not then the state should be defined within the component.event handler should be defined inside the component that it modifies.
+
+
+
+Document Wide check Handling,
+
+
+
+
+Event capturing and bubbling:
+Is about events occuring in the  browser. the browser tries to find event handlers to call when a user does something in the application.
+The order is divided into the
+1. capture phase: Here the browser looks at the element in which the event occurs and checks if the most parent element has some related event handler. The browser performs this check for the next parent element of the affected element until it reaches the exact element in which the event occurs,
+ 
+2.target phase:Here browser looks at the event where the event occurs and if there is an event handler
+
+ and 
+3.  buble phase: The browser checks if the immediate parent of the element where the event occured and if there is an event it calls the handler
+ 
+Checking element inclusion
+
+useRef: is a function that allows us to create a reference to an element or component within the app
+how to use
+1: import the useRef hook from react
+2: initialize a reference variable to the use ref hook eg const divEl= useRef()
+3. add the variable as a ref property to the desired element or component eg <div ref={divEl}>'content...'</div>
+
+
+portal enable you to alter the behaviour of the react app. Eg you can use the portal to move a component away from its parent in order to access some behaviour.  ReactDOM.createPortal(<div></div>)
+
+
+Day 5:
+Steps for creating custom hooks
+
+1. create a function called useSomething
+2. find all non-JSX expressions that refer to 1-2 related peices of state
+3. cut them all out and paste into the function you created
+4. find all variables that are not defined in your original component from where you cut the code
+5. Return an object that contains these variables in the useSomething function
+6. call the hook in the component and destructure the properties that the component needs
+7. find 'not defined errors in the hook' pass the missing variables as arguements to the hook
+8. rename the hook to something more meaningful
+9. Rename the returned properties to something more descriptive.
+
+useReducer:
+This is a function for managing state and it defines state similar to the useState function. it is an alternative to useState so you need to use either most of the time. useReducer is most suitable when you have multiple peices of state that are closely related
+and when the we have a state who's future value depends on the current state.
+When called, the useReduce hook produceses a state object, and when a change is required an action object is sent to its dispatch function
+which is automatically sent to a reducer function which then creates the new state which can then be passed to the component from its parent.
+
+rules to creating a useReducer:
+1. Whatever is returned by the reducer function becomes the new state
+2. The reducer function cannot use async/await functions, make requests or promises  and cannot use outside variables
+3. do not directly modify the state object in the reducer always create a new state object and add the specific object
+
+
+REDUX
+Redux is a library used to manage the entire state of an application using techniques like use reducer.
+With redux you create a store to create and maintain the state object and then enable individual components to connect to the store and access the state. Redux library doesnot assume that the application is using react. It uses context technique under the hook.
+This library is essential when developing larger applications with multiple components with multiple state variables.
+ReduxToolkit library helps simplify the use of the classic redux library making the coding.
+
+Redux Store
+A store is an object that will hold all the state data. An application will typically have one redux store except for really large applications.  Usually to access the store you utilize the react redux library. 
+
+
+
+Conneting React to Redux
+
+1. export the store from its file
+2. Import th store into the root 'index.js' file
+3. import the 'Provider' component from 'react-redux' library
+4. Wrap the app component with the provider, and pass the store as prop to the Provider
+
+Accessing dispatch functions from
+1. Add a reducer that changes the state in some way to the state object
+2. Export the action creator that the slice automatically creates
+3. Find the component that you want to dispact the action from
+4. import the action creator function and 'useDispatch' hook  from react-redux
+5. call the useDisPatch hook asigning it to a variable to get access to the dispatch function
+6. when the coresponding event occurs, call the dispatch function with the imported action creator as arguement
+
+Accessing state inside a component
+1. Find the component that needs to access the state
+2. import useSelector hook from 'react-redux'
+3. call the useSelector hook, passing in a selector function
+4. use the state returned in the application
+
+Changing State inside a component
+1. Add a reducer to one of the slices that changes state in some particular way
+2. Export the action creator that the slice automatically creates
+3. Find the component from where the state change will be dispatched
+4. Import the action creator function and 'useDispatch' from 'react-redux'
+
+
+creating extra reducers:
+1. import createAction from 'react-redux'
+2. initialize a variable with the name of the reducer to the createAction function and pass an action type string as arguement
+3. define an extraReducers function with 'builder' as an arguement, then call the builder.addCase function passing the action type string and dersired change as a callback function with state and action as arguements
+
+
+
+
 

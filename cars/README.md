@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# cars app
+
+Simple cars app to illustrate the implementation of redux store and the use of slices and reducers
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

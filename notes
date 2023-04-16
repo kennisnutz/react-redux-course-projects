@@ -240,6 +240,13 @@ A store is an object that will hold all the state data. An application will typi
 
 Conneting React to Redux
 
+Creating A redux store
+1. Identify what state exists in the application
+2. identify how that state changes over time
+3. group togethr common pieces of state
+4 create a slice in each group
+
+Using A redux store
 1. export the store from its file
 2. Import th store into the root 'index.js' file
 3. import the 'Provider' component from 'react-redux' library

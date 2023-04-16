@@ -1,0 +1,40 @@
+states: 
+1. name : string **
+2. cost: number **
+3. searchTerm: string **
+4. cars: array of objects{id, name, cost}**
+
+Derived states:
+5. totalCost: number 
+6. matchedCars: ?
+
+how the state changes:
+1. name: change name
+2. cost: change cost
+3. searchTerm: change searchTerm
+4. cars: add car, remove Car
+
+Grouping:
+1 name + cost=> add car, remove car
+2 searchTerm + cars => displaying cars
+
+Slices
+Slice1:
+
+state: formSlice
+name: string
+cost: number
+
+reducers:
+changeName()
+changeCost
+
+Slice2: carSlice
+state:
+searchTerm: string
+cars: [{id, name, cost}]
+
+reducers:
+changeSearchTerm
+addCar
+deleteCar

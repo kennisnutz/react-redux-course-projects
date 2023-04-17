@@ -272,12 +272,42 @@ Changing State inside a component
 3. Find the component from where the state change will be dispatched
 4. Import the action creator function and 'useDispatch' from 'react-redux'
 
-
 creating extra reducers:
 1. import createAction from 'react-redux'
 2. initialize a variable with the name of the reducer to the createAction function and pass an action type string as arguement
 3. define an extraReducers function with 'builder' as an arguement, then call the builder.addCase function passing the action type string and dersired change as a callback function with state and action as arguements
 
+
+Data fetching with redux toolkit.
+When fetching data from an api, typically you would use either "Async Thunk Functions" or "Redux Toolkit Query"
+Api requests should never be made from a reducer. Reducers should always be synchronous. they should take a state and an action and update the state. 
+
+Async Thunk Functions
+Steps to creating and Async Thunk:
+1. Create a  new file for the thunk. Name it after the purpose of the request
+2. Create the thunk. Give it a base type that describes the purpose of the request
+3. In the thunk, make the request, return the data that you want to use in the reducer
+4. In the slice, add extraReducers, watching for the action types made by the thunk
+5. Export the thunk from the store/index.js file
+6. when user does something on the app, dispatch the thunk function to run it
+
+Redux Toolkit Query
+It is used to create client side code who's goal is to fetch data. it includes a createApi function that returns a slice. and contains thunk functions and hooks that make fetching data and initializing state very easy. 
+
+Benefits
+It handles lots of corner cases of making requests
+fine-grained loading and error states
+data caching and refetching
+
+Steps
+1. Identify a group of related requests that the app needs to make
+2. make a new file that will create the API
+3. The API needs to store a ton of state related data, request status, errors. Add a reducer-path
+4. The API needs to know how and where to send requests. Add baseQuery
+5. Add 'endpoints'. one for each kind of request you want to make. Requests that read data are queries, request that write data are mutations
+6. Export all the automatically generated hooks
+7. Connect API to the store. Reducer, middleware and listeners
+8.Export the hooks from the store/index.js file
 
 
 

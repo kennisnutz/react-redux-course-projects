@@ -1,0 +1,41 @@
+Requests 
+
+Albums
+1. fetch Albums
+2. add Albums
+3. delete Albums
+
+Photos
+1. fetch Photos
+2. add Photos
+3. delete Photos
+
+
+Albums Endpoints
+
+******fetch Albums*****
+-- Aim: get a list of albums
+-- name: fetchAlbums
+-- type: query
+-- path: /albums
+--query string : ?userId=userId
+-- method: GET
+-- body: ''
+
+****add Albums*****
+--Aim : create a new album
+--name: createAlbum
+-- type: mutation
+-- path: /albums
+-- query string: ''
+-- method: POST
+-- body: {title, userId}
+
+*****delete Albums****
+--Aim: remove an existing album
+--name: removeAlbum
+-- type: mutation
+-- path: /album/+userId
+-- query string: ''
+-- method: DELETE
+--body :""

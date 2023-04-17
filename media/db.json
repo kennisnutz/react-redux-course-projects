@@ -1,0 +1,120 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Albert Tromp",
+      "id": 2
+    },
+    {
+      "name": "Donnie Lynch",
+      "id": 3
+    }
+  ],
+  "albums": [
+    {
+      "userId": 1,
+      "title": "Electronic Concrete Towels",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "title": "Intelligent Concrete Car",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "title": "Bespoke Cotton Chips",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "title": "Fantastic Concrete Pizza",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "title": "Recycled Metal Hat",
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "title": "Practical Wooden Sausages",
+      "id": 11
+    },
+    {
+      "userId": 3,
+      "title": "Gorgeous Cotton Pants",
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "title": "Generic Rubber Towels",
+      "id": 16
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=83696",
+      "id": 1
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/150/abstract?lock=20300",
+      "id": 6
+    },
+    {
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=65880",
+      "id": 7
+    },
+    {
+      "albumId": 11,
+      "url": "https://loremflickr.com/150/150/abstract?lock=99275",
+      "id": 10
+    },
+    {
+      "albumId": 11,
+      "url": "https://loremflickr.com/150/150/abstract?lock=18165",
+      "id": 11
+    },
+    {
+      "albumId": 10,
+      "url": "https://loremflickr.com/150/150/abstract?lock=47168",
+      "id": 12
+    },
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=94924",
+      "id": 13
+    },
+    {
+      "albumId": 16,
+      "url": "https://loremflickr.com/150/150/abstract?lock=60856",
+      "id": 15
+    },
+    {
+      "albumId": 16,
+      "url": "https://loremflickr.com/150/150/abstract?lock=7957",
+      "id": 16
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=79977",
+      "id": 17
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=62629",
+      "id": 18
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=26178",
+      "id": 19
+    }
+  ]
+}
